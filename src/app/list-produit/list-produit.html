@@ -1,0 +1,19 @@
+<p>{{a}}</p>
+
+
+<h1>{{info.nom}}</h1>
+<h1>{{info.prenom}}</h1>
+<h1>{{info.age}}</h1>
+
+<button (click)="afficher()">Afficher</button>
+
+<p>{{i}}</p>
+<input [(ngModel)]="i">
+
+<p>liste produit</p>
+
+<ul>
+  @for (p of noms; track $index){
+    <li>{{p}}</li>
+  }
+</ul>
