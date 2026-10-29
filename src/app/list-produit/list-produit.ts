@@ -10,6 +10,7 @@
 
 import { Component } from '@angular/core';
 import { Produit } from '../modele/produit';
+import { ProduitService } from '../services/produit-service';
 
 @Component({
   selector: 'app-list-produit',
@@ -22,10 +23,10 @@ import { Produit } from '../modele/produit';
 )
 
 export class ListProduit {
-  produits! : Produit[]
+   produits! : Produit[]
 
-  constructor() {
-    // 2. Remplissage du tableau avec une liste de produits
+  constructor(private ps:ProduitService) {
+    /*// 2. Remplissage du tableau avec une liste de produits
     this.produits = [
       {
         idProduit: 1,
@@ -45,6 +46,11 @@ export class ListProduit {
         prixProduit: 750,
         dateCreation: new Date('2026-03-01')
       }
-    ];
+    ];*/
+    this.produits=this.ps.getAllProduct();
+  
   }
+
+  
+
 }
