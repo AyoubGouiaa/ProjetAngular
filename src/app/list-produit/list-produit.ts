@@ -1,4 +1,15 @@
+
+
+
+
+
+
+
+
+
+
 import { Component } from '@angular/core';
+import { Produit } from '../modele/produit';
 
 @Component({
   selector: 'app-list-produit',
@@ -11,23 +22,29 @@ import { Component } from '@angular/core';
 )
 
 export class ListProduit {
-  a=5
+  produits! : Produit[]
 
-  info={
-    nom:"amine",
-    prenom:"boubaker",
-    age:20
+  constructor() {
+    // 2. Remplissage du tableau avec une liste de produits
+    this.produits = [
+      {
+        idProduit: 1,
+        nomProduit: 'PC Portable ASUS',
+        prixProduit: 2500,
+        dateCreation: new Date('2026-01-15')
+      },
+      {
+        idProduit: 2,
+        nomProduit: 'Smartphone Samsung',
+        prixProduit: 1800,
+        dateCreation: new Date('2026-02-10')
+      },
+      {
+        idProduit: 3,
+        nomProduit: 'Écran 27 pouces',
+        prixProduit: 750,
+        dateCreation: new Date('2026-03-01')
+      }
+    ];
   }
-
-  afficher(){
-    console.log("Bnjr");
-  }
-
-
-  i=0
-
-
-  nom:string[]=["Ali","amine","omar","Adem Jr"]
-  
-
 }

@@ -1,19 +1,22 @@
-<p>{{a}}</p>
-
-
-<h1>{{info.nom}}</h1>
-<h1>{{info.prenom}}</h1>
-<h1>{{info.age}}</h1>
-
-<button (click)="afficher()">Afficher</button>
-
-<p>{{i}}</p>
-<input [(ngModel)]="i">
-
-<p>liste produit</p>
-
-<ul>
-  @for (p of noms; track $index){
-    <li>{{p}}</li>
-  }
-</ul>
+<div class="container mt-4">
+  <div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Prix</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of produits">
+          <td>{{p.idProduit}}</td>
+          <td>{{p.nomProduit}}</td>
+          <td>{{p.prixProduit | currency:'EUR'}}</td> <!-- Optionnel : formate le prix -->
+          <td>{{p.dateCreation | date:'dd/MM/yyyy'}}</td> <!-- Optionnel : formate la date -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
